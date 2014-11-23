@@ -3,10 +3,9 @@ local unitName = "smart"
 local unitDef = {
 	name= "smart",
 	unitname="smart",
-	Side = "TestSide",
 	
 	Description = "bug!",
-	MaxDamage = 800,
+	MaxDamage = 100,
 	
 	
 	objectName = "assembler.s3o",

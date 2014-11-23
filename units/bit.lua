@@ -3,10 +3,9 @@ local unitName = "bit"
 local unitDef = {
 	name= "bit",
 	unitname="bit",
-	Side = "TestSide",
 	
 	Description = "generic low range unit",
-	MaxDamage = 800,
+	MaxDamage = 100,
 	
 	
 	objectName = "ball.s3o",
@@ -40,14 +39,14 @@ local unitDef = {
 local weaponDefs = {
     orangeblob = {
     name = "Orange Plasma Cannon",
-    weapontype = "Cannon",
-    accuracy = 10,
+    weapontype = "BeamLaser",
+    accuracy = 0,
     areaofeffect = 100,
     avoidfeature = false,
     avoidfriendly = true,
-    canattackground = true,
     collidefriendly = true,
     collisionsize = 8,
+	collideGround = false,
     commandfire = false,
     craterboost = 0,
     cratermult = 0,
@@ -57,6 +56,8 @@ local weaponDefs = {
     impulsefactor = 0,
     intensity = 1,
     noselfdamage = true,
+	canattackground = true,
+	
     size = 4,
 --        soundstart = "tank_fire",
 --        soundhit = "explo01",
@@ -65,7 +66,6 @@ local weaponDefs = {
     rgbcolor = "1.0 1.0 1.0",
     turret = true,
     texture1 = "flame",
-    weaponvelocity = 400,
 --		explosiongenerator = "custom:TANKGUN_FX",
     damage =
     {

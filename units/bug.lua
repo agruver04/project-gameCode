@@ -3,10 +3,9 @@ local unitName = "bug"
 local unitDef = {
 	name= "bug",
 	unitname="bug",
-	Side = "TestSide",
 	
 	Description = "bug!",
-	MaxDamage = 800,
+	MaxDamage = 100,
 	
 	
 	objectName = "bugNEW.s3o",
