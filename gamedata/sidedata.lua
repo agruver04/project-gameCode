@@ -1,11 +1,9 @@
 local sidedata = {
-	[1] = {
-	name = "cpu",
+	{
+	name = "TANKS",
 	startUnit = "smart",
-	},
-	[2] = {
-	name = "hacker",
-	startUnit = "bit",
 	}
+
 }
+
 return sidedata

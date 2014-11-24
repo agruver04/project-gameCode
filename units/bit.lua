@@ -5,7 +5,8 @@ local unitDef = {
 	unitname="bit",
 	
 	Description = "generic low range unit",
-	MaxDamage = 100,
+	MaxDamage = 1,
+	category = [[LAND]],
 	
 	
 	objectName = "ball.s3o",
@@ -32,6 +33,7 @@ local unitDef = {
 	 weapons = {
         [1] = {
             def = "orangeblob",
+			onlyTargetCategory = [[LAND]],
         },
     },
 }
@@ -47,7 +49,7 @@ local weaponDefs = {
     collidefriendly = true,
     collisionsize = 8,
 	collideGround = false,
-    commandfire = false,
+    commandfire = true,
     craterboost = 0,
     cratermult = 0,
     edgeeffectiveness = 0.1,
