@@ -13,7 +13,8 @@ local resources =
 		{
 --			flare  =  'flare.tga',
 --			lightning  =  'lightning.tga',
---			flame  =  'flame.tga',
+			flame  =  'flame.tga',
+			flowtrail = 'flowtrail.tga'
 		}
 	}
 }

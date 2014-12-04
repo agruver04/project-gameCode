@@ -17,6 +17,11 @@ lua_SwitchToExploit() {
 	return 0;
 }
 
+Killed(severity,corpsetype)
+{
+	hide body;
+	explode body type SHATTER;
+}
 Deploy() {
 	if (deployed) return 0; //mutex
 	signal SIG_DEPLOY;

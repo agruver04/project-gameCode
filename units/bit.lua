@@ -5,7 +5,7 @@ local unitDef = {
 	unitname="bit",
 	
 	Description = "generic low range unit",
-	MaxDamage = 1,
+	MaxDamage = 2000,
 	category = [[LAND]],
 	
 	
@@ -17,8 +17,9 @@ local unitDef = {
     MaxSlope = 15,
     MaxVelocity = 10,
     MaxWaterDepth = 300,
-    MovementClass = "Default2x2",
+    MovementClass = "Default3x3",
     TurnRate = 900,
+	ExplodeAs = "TANKDEATH",
 	
 	--Abilities
     Builder = 0,
@@ -32,50 +33,72 @@ local unitDef = {
 	 
 	 weapons = {
         [1] = {
-            def = "orangeblob",
+            def = "bitgun",
 			onlyTargetCategory = [[LAND]],
         },
     },
 }
 
 local weaponDefs = {
-    orangeblob = {
-    name = "Orange Plasma Cannon",
-    weapontype = "BeamLaser",
-    accuracy = 0,
-    areaofeffect = 100,
-    avoidfeature = false,
-    avoidfriendly = true,
-    collidefriendly = true,
-    collisionsize = 8,
-	collideGround = false,
-    commandfire = true,
-    craterboost = 0,
-    cratermult = 0,
-    edgeeffectiveness = 0.1,
-    explosionspeed = 128,
-    impulseboost = 0,
-    impulsefactor = 0,
-    intensity = 1,
-    noselfdamage = true,
-	canattackground = true,
-	
-    size = 4,
---        soundstart = "tank_fire",
---        soundhit = "explo01",
-    range = 250,
-    reloadtime = 1.5,
-    rgbcolor = "1.0 1.0 1.0",
-    turret = true,
-    texture1 = "flame",
---		explosiongenerator = "custom:TANKGUN_FX",
-    damage =
-    {
-        default = 55,
-    },
-    },
+    bitgun = {
+	name="3d Geometric shapes!!";
+	rendertype=1;
+	lineofsight=1;
+	--ballistic=1;
+	model="network_medium_missile.s3o";
+	--Texture1=none;
+	Texture2=flowtrail;
+	--Texture3=none;
+	weapontype=StarburstLauncher;
+	avoidfeature = false,
+    avoidfriendly = false,
+    canattackground = true,
+    collidefriendly = false,
+	collideFeature = true,
+	collideGround = true,
+	noSelfDamage = true,
+	impactOnly = true,
+	turret=1;
+	range=350;
+	weaponvelocity=2000;
+	startvelocity=400;
+	weaponacceleration=600;
+	fixedLauncher=1;
+ 	smoketrail=1;
+	tracks=1;
+	guided=1;
+	weapontimer=.1;
+	turnrate=60000;
+	flighttime=5;
+	radarRadius = 5000,
+
+	burst=2;
+	burstrate=.3;
+	projectiles=2;
+
+	reloadtime=2;
+
+	areaofeffect=128;
+	collidefriendly=0;
+	avoidfriendly=0;
+
+	tolerance=3000;
+
+	impulsefactor=0;
+	impulseBoost=0;
+	craterMult=0;
+	craterBoost=0;
+	alwaysVisible = true,
+
+	interceptedbyshieldtype=1;
+	damage =
+		{
+		default=100,
+		bugclass = 150,
+		smartclass = 50,
+		}
+	}
 }
 
-unitDef.weaponDefs = weaponDefs
 unitDef.weaponDefs = weaponDefs
 return lowerkeys({ [unitName] = unitDef })

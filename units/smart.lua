@@ -5,7 +5,8 @@ local unitDef = {
 	unitname="smart",
 	
 	Description = "bug!",
-	MaxDamage = 100,
+	MaxDamage = 2000,
+	category = [[LAND]],
 	
 	
 	objectName = "assembler.s3o",
@@ -14,9 +15,9 @@ local unitDef = {
     FootprintX = 2,
     FootprintZ = 2,
     MaxSlope = 15,
-    MaxVelocity = 10,
+    MaxVelocity = 5,
     MaxWaterDepth = 300,
-    MovementClass = "Default2x2",
+    MovementClass = "Default4x4",
     TurnRate = 900,
 	
 	--Abilities
@@ -32,6 +33,7 @@ local unitDef = {
 	 weapons = {
         [1] = {
             def = "smartblob",
+			onlyTargetCategory = [[LAND]],
         },
     },
 }
@@ -39,13 +41,17 @@ local unitDef = {
 local weaponDefs = {
     smartblob = {
     name = "Orange Plasma Cannon",
-    weapontype = "Cannon",
+    weapontype = "StarburstLauncher",
     accuracy = 10,
     areaofeffect = 100,
     avoidfeature = false,
-    avoidfriendly = true,
+    avoidfriendly = false,
     canattackground = true,
-    collidefriendly = true,
+    collidefriendly = false,
+	collideFeature = true,
+	collideGround = true,
+	noSelfDamage = true,
+	impactOnly = true,
     collisionsize = 8,
     commandfire = false,
     craterboost = 0,
@@ -55,20 +61,30 @@ local weaponDefs = {
     impulseboost = 0,
     impulsefactor = 0,
     intensity = 1,
+	turret=1;
+	range=1250;
+	weaponvelocity=3000;
+	startvelocity=0;
+	weaponacceleration=1750;
+	fixedLauncher=1;
+ 	smoketrail=1;
+	tracks=1;
+	guided=1;
+	weapontimer=.1;
     noselfdamage = true,
-    size = 4,
+	radarRadius = 5000,
+	alwaysVisible=true,
+    size = 20,
 --        soundstart = "tank_fire",
 --        soundhit = "explo01",
-    range = 250,
-    reloadtime = 1.5,
+    reloadtime = 4,
     rgbcolor = "1.0 1.0 1.0",
-    turret = true,
     texture1 = "flame",
-    weaponvelocity = 400,
 --		explosiongenerator = "custom:TANKGUN_FX",
     damage =
     {
-        default = 55,
+        default = 400,
+		bitclass = 500,
     },
     },
 }

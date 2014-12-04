@@ -56,10 +56,82 @@ end
 local function SpawnStartUnit(teamID)
 	local x,y,z = Spring.GetTeamStartPosition(teamID)
 	
-	
+	--First Bit
 	local unitID = Spring.CreateUnit("bit", x, y, z, 0, teamID)
 	if unitID then
-		Spring.SendMessageToTeam(2, tostring(teamID))
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--Second Bit
+	local unitID = Spring.CreateUnit("bit", x + 128, y, z, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--Third Bit
+	local unitID = Spring.CreateUnit("bit", x - 128, y, z, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--First Bug
+	local unitID = Spring.CreateUnit("bug", x, y, z+ 128, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--Second Bug
+	local unitID = Spring.CreateUnit("bug", x + 128, y , z + 128, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--Third Bug
+	local unitID = Spring.CreateUnit("bug", x - 128, y , z + 128, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--First Smart
+	local unitID = Spring.CreateUnit("smart", x, y , z - 128, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--Second Smart
+	local unitID = Spring.CreateUnit("smart", x + 128, y , z - 128, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
+		Spring.SetUnitAlwaysVisible(unitID,true)
+		Spring.SetUnitNeutral (unitID,false)
+		--Spring.SetUnitNoSelect(unitID, false)
+	end
+	
+	--Third Smart
+	local unitID = Spring.CreateUnit("smart", x - 128, y, z - 128, 0, teamID)
+	if unitID then
+		--Spring.SendMessageToTeam(2, tostring(teamID))
 		Spring.SetUnitAlwaysVisible(unitID,true)
 		Spring.SetUnitNeutral (unitID,false)
 		--Spring.SetUnitNoSelect(unitID, false)

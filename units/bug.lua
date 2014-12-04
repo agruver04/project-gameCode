@@ -5,16 +5,17 @@ local unitDef = {
 	unitname="bug",
 	
 	Description = "bug!",
-	MaxDamage = 100,
+	MaxDamage = 2000,
+	category = [[LAND]],
 	
 	
 	objectName = "bugNEW.s3o",
-	Acceleration = 1,
+	Acceleration = 3,
     BrakeRate = 0.1,
     FootprintX = 2,
     FootprintZ = 2,
     MaxSlope = 15,
-    MaxVelocity = 10,
+    MaxVelocity = 20,
     MaxWaterDepth = 300,
     MovementClass = "Default2x2",
     TurnRate = 900,
@@ -31,46 +32,55 @@ local unitDef = {
 	 
 	 weapons = {
         [1] = {
-            def = "bugblob",
+            def = "buglaser",
+			onlyTargetCategory = [[LAND]],
         },
     },
 }
 
 local weaponDefs = {
-    bugblob = {
-    name = "Orange Plasma Cannon",
-    weapontype = "Cannon",
-    accuracy = 10,
-    areaofeffect = 100,
+    buglaser = {
+    name = "The Bug's short distance tazer",
+    weapontype = "BeamLaser",
+    accuracy = 0,
+    areaofeffect = 0,
     avoidfeature = false,
-    avoidfriendly = true,
+    avoidfriendly = false,
     canattackground = true,
-    collidefriendly = true,
+    collidefriendly = false,
+	collideFeature = true,
+	collideGround = true,
+	noSelfDamage = true,
+	impactOnly = true,
     collisionsize = 8,
-    commandfire = false,
+    commandfire = true,
     craterboost = 0,
     cratermult = 0,
     edgeeffectiveness = 0.1,
     explosionspeed = 128,
     impulseboost = 0,
     impulsefactor = 0,
+	minIntensity = 1.0,
     intensity = 1,
-    noselfdamage = true,
+	radarRadius = 5000,
+	alwaysVisible = true,
+	
     size = 4,
 --        soundstart = "tank_fire",
 --        soundhit = "explo01",
-    range = 250,
-    reloadtime = 1.5,
-    rgbcolor = "1.0 1.0 1.0",
+    range = 100,
+    reloadtime = .5,
+    rgbcolor = ".5 .5 2.0",
     turret = true,
     texture1 = "flame",
-    weaponvelocity = 400,
 --		explosiongenerator = "custom:TANKGUN_FX",
     damage =
     {
-        default = 55,
+        default = 50,
+		smartclass = 75,
+		bitclass = 40,
     },
-    },
+}
 }
 
 unitDef.weaponDefs = weaponDefs
